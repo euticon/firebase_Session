@@ -1,10 +1,16 @@
-
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+void main() async {
+  FirebaseApp app = await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  
   runApp(MyApp());
 }
 
